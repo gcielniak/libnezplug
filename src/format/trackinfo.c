@@ -487,7 +487,6 @@ static uint8_t tracks_process_line(NEZ_PLAY *player, const char *data, uint32_t 
 }
 
 PROTECTED uint8_t TRACKS_LoadM3U(NEZ_PLAY *player, const uint8_t *uData, uint32_t length) {
-    uint32_t line = 1;
     NEZ_TRACKS *tracks = player->tracks;
     const char *data = (const char *)uData;
     const char *d = data;
@@ -516,7 +515,6 @@ PROTECTED uint8_t TRACKS_LoadM3U(NEZ_PLAY *player, const uint8_t *uData, uint32_
 
         p++;
         d = p;
-        line++;
     } while((size_t)(p - data) < length);
 
     return 1;
